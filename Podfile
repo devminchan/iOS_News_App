@@ -6,6 +6,8 @@ target 'CocoaHeroes' do
   use_frameworks!
 
   # Pods for CocoaHeroes
+  pod 'Alamofire'
+  pod 'Kingfisher'
 
   target 'CocoaHeroesTests' do
     inherit! :search_paths

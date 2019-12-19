@@ -183,6 +183,7 @@
 				BEAC768323AB3EF1008D42EB /* Sources */,
 				BEAC768423AB3EF1008D42EB /* Frameworks */,
 				BEAC768523AB3EF1008D42EB /* Resources */,
+				7EC04F852D72E92596FB66B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +221,7 @@
 				BEAC76A723AB3EF3008D42EB /* Sources */,
 				BEAC76A823AB3EF3008D42EB /* Frameworks */,
 				BEAC76A923AB3EF3008D42EB /* Resources */,
+				570169AB2455756155DA123D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,6 +346,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		570169AB2455756155DA123D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocoaHeroes-CocoaHeroesUITests/Pods-CocoaHeroes-CocoaHeroesUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocoaHeroes-CocoaHeroesUITests/Pods-CocoaHeroes-CocoaHeroesUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CocoaHeroes-CocoaHeroesUITests/Pods-CocoaHeroes-CocoaHeroesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EC04F852D72E92596FB66B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocoaHeroes/Pods-CocoaHeroes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocoaHeroes/Pods-CocoaHeroes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CocoaHeroes/Pods-CocoaHeroes-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B91BB3E45EC13221A45F701B /* [CP] Check Pods Manifest.lock */ = {
