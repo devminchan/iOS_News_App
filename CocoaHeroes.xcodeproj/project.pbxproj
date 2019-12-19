@@ -11,11 +11,11 @@
 		BEAC768D23AB3EF1008D42EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768C23AB3EF1008D42EB /* SceneDelegate.swift */; };
 		BEAC768F23AB3EF1008D42EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768E23AB3EF1008D42EB /* ViewController.swift */; };
 		BEAC769223AB3EF1008D42EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAC769023AB3EF1008D42EB /* Main.storyboard */; };
-		BEAC769523AB3EF1008D42EB /* PodPod.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEAC769323AB3EF1008D42EB /* PodPod.xcdatamodeld */; };
+		BEAC769523AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEAC769323AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld */; };
 		BEAC769723AB3EF3008D42EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAC769623AB3EF3008D42EB /* Assets.xcassets */; };
 		BEAC769A23AB3EF3008D42EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAC769823AB3EF3008D42EB /* LaunchScreen.storyboard */; };
-		BEAC76A523AB3EF3008D42EB /* PodPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC76A423AB3EF3008D42EB /* PodPodTests.swift */; };
-		BEAC76B023AB3EF3008D42EB /* PodPodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC76AF23AB3EF3008D42EB /* PodPodUITests.swift */; };
+		BEAC76A523AB3EF3008D42EB /* CocoaHeroesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC76A423AB3EF3008D42EB /* CocoaHeroesTest.swift */; };
+		BEAC76B023AB3EF3008D42EB /* CocoaHeroesUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC76AF23AB3EF3008D42EB /* CocoaHeroesUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BEAC768723AB3EF1008D42EB /* PodPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAC768723AB3EF1008D42EB /* CocoaHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAC768A23AB3EF1008D42EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEAC768C23AB3EF1008D42EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BEAC768E23AB3EF1008D42EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,11 +45,11 @@
 		BEAC769623AB3EF3008D42EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEAC769923AB3EF3008D42EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEAC769B23AB3EF3008D42EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEAC76A023AB3EF3008D42EB /* PodPodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodPodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEAC76A423AB3EF3008D42EB /* PodPodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodPodTests.swift; sourceTree = "<group>"; };
+		BEAC76A023AB3EF3008D42EB /* CocoaHeroesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaHeroesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAC76A423AB3EF3008D42EB /* CocoaHeroesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaHeroesTest.swift; sourceTree = "<group>"; };
 		BEAC76A623AB3EF3008D42EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEAC76AB23AB3EF3008D42EB /* PodPodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodPodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEAC76AF23AB3EF3008D42EB /* PodPodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodPodUITests.swift; sourceTree = "<group>"; };
+		BEAC76AB23AB3EF3008D42EB /* CocoaHeroesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaHeroesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAC76AF23AB3EF3008D42EB /* CocoaHeroesUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaHeroesUITest.swift; sourceTree = "<group>"; };
 		BEAC76B123AB3EF3008D42EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,9 +81,9 @@
 		BEAC767E23AB3EF1008D42EB = {
 			isa = PBXGroup;
 			children = (
-				BEAC768923AB3EF1008D42EB /* PodPod */,
-				BEAC76A323AB3EF3008D42EB /* PodPodTests */,
-				BEAC76AE23AB3EF3008D42EB /* PodPodUITests */,
+				BEAC768923AB3EF1008D42EB /* CocoaHeroes */,
+				BEAC76A323AB3EF3008D42EB /* CocoaHeroesTests */,
+				BEAC76AE23AB3EF3008D42EB /* CocoaHeroesUITests */,
 				BEAC768823AB3EF1008D42EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,14 +91,14 @@
 		BEAC768823AB3EF1008D42EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEAC768723AB3EF1008D42EB /* PodPod.app */,
-				BEAC76A023AB3EF3008D42EB /* PodPodTests.xctest */,
-				BEAC76AB23AB3EF3008D42EB /* PodPodUITests.xctest */,
+				BEAC768723AB3EF1008D42EB /* CocoaHeroes.app */,
+				BEAC76A023AB3EF3008D42EB /* CocoaHeroesTests.xctest */,
+				BEAC76AB23AB3EF3008D42EB /* CocoaHeroesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BEAC768923AB3EF1008D42EB /* PodPod */ = {
+		BEAC768923AB3EF1008D42EB /* CocoaHeroes */ = {
 			isa = PBXGroup;
 			children = (
 				BEAC768A23AB3EF1008D42EB /* AppDelegate.swift */,
@@ -108,35 +108,35 @@
 				BEAC769623AB3EF3008D42EB /* Assets.xcassets */,
 				BEAC769823AB3EF3008D42EB /* LaunchScreen.storyboard */,
 				BEAC769B23AB3EF3008D42EB /* Info.plist */,
-				BEAC769323AB3EF1008D42EB /* PodPod.xcdatamodeld */,
+				BEAC769323AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld */,
 			);
-			path = PodPod;
+			path = CocoaHeroes;
 			sourceTree = "<group>";
 		};
-		BEAC76A323AB3EF3008D42EB /* PodPodTests */ = {
+		BEAC76A323AB3EF3008D42EB /* CocoaHeroesTests */ = {
 			isa = PBXGroup;
 			children = (
-				BEAC76A423AB3EF3008D42EB /* PodPodTests.swift */,
+				BEAC76A423AB3EF3008D42EB /* CocoaHeroesTest.swift */,
 				BEAC76A623AB3EF3008D42EB /* Info.plist */,
 			);
-			path = PodPodTests;
+			path = CocoaHeroesTests;
 			sourceTree = "<group>";
 		};
-		BEAC76AE23AB3EF3008D42EB /* PodPodUITests */ = {
+		BEAC76AE23AB3EF3008D42EB /* CocoaHeroesUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BEAC76AF23AB3EF3008D42EB /* PodPodUITests.swift */,
+				BEAC76AF23AB3EF3008D42EB /* CocoaHeroesUITest.swift */,
 				BEAC76B123AB3EF3008D42EB /* Info.plist */,
 			);
-			path = PodPodUITests;
+			path = CocoaHeroesUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEAC768623AB3EF1008D42EB /* PodPod */ = {
+		BEAC768623AB3EF1008D42EB /* CocoaHeroes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEAC76B423AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "PodPod" */;
+			buildConfigurationList = BEAC76B423AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "CocoaHeroes" */;
 			buildPhases = (
 				BEAC768323AB3EF1008D42EB /* Sources */,
 				BEAC768423AB3EF1008D42EB /* Frameworks */,
@@ -146,14 +146,14 @@
 			);
 			dependencies = (
 			);
-			name = PodPod;
+			name = CocoaHeroes;
 			productName = PodPod;
-			productReference = BEAC768723AB3EF1008D42EB /* PodPod.app */;
+			productReference = BEAC768723AB3EF1008D42EB /* CocoaHeroes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BEAC769F23AB3EF3008D42EB /* PodPodTests */ = {
+		BEAC769F23AB3EF3008D42EB /* CocoaHeroesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEAC76B723AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "PodPodTests" */;
+			buildConfigurationList = BEAC76B723AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "CocoaHeroesTests" */;
 			buildPhases = (
 				BEAC769C23AB3EF3008D42EB /* Sources */,
 				BEAC769D23AB3EF3008D42EB /* Frameworks */,
@@ -164,14 +164,14 @@
 			dependencies = (
 				BEAC76A223AB3EF3008D42EB /* PBXTargetDependency */,
 			);
-			name = PodPodTests;
+			name = CocoaHeroesTests;
 			productName = PodPodTests;
-			productReference = BEAC76A023AB3EF3008D42EB /* PodPodTests.xctest */;
+			productReference = BEAC76A023AB3EF3008D42EB /* CocoaHeroesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BEAC76AA23AB3EF3008D42EB /* PodPodUITests */ = {
+		BEAC76AA23AB3EF3008D42EB /* CocoaHeroesUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEAC76BA23AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "PodPodUITests" */;
+			buildConfigurationList = BEAC76BA23AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "CocoaHeroesUITests" */;
 			buildPhases = (
 				BEAC76A723AB3EF3008D42EB /* Sources */,
 				BEAC76A823AB3EF3008D42EB /* Frameworks */,
@@ -182,9 +182,9 @@
 			dependencies = (
 				BEAC76AD23AB3EF3008D42EB /* PBXTargetDependency */,
 			);
-			name = PodPodUITests;
+			name = CocoaHeroesUITests;
 			productName = PodPodUITests;
-			productReference = BEAC76AB23AB3EF3008D42EB /* PodPodUITests.xctest */;
+			productReference = BEAC76AB23AB3EF3008D42EB /* CocoaHeroesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BEAC768223AB3EF1008D42EB /* Build configuration list for PBXProject "PodPod" */;
+			buildConfigurationList = BEAC768223AB3EF1008D42EB /* Build configuration list for PBXProject "CocoaHeroes" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,9 +223,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BEAC768623AB3EF1008D42EB /* PodPod */,
-				BEAC769F23AB3EF3008D42EB /* PodPodTests */,
-				BEAC76AA23AB3EF3008D42EB /* PodPodUITests */,
+				BEAC768623AB3EF1008D42EB /* CocoaHeroes */,
+				BEAC769F23AB3EF3008D42EB /* CocoaHeroesTests */,
+				BEAC76AA23AB3EF3008D42EB /* CocoaHeroesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAC768F23AB3EF1008D42EB /* ViewController.swift in Sources */,
-				BEAC769523AB3EF1008D42EB /* PodPod.xcdatamodeld in Sources */,
+				BEAC769523AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld in Sources */,
 				BEAC768B23AB3EF1008D42EB /* AppDelegate.swift in Sources */,
 				BEAC768D23AB3EF1008D42EB /* SceneDelegate.swift in Sources */,
 			);
@@ -273,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEAC76A523AB3EF3008D42EB /* PodPodTests.swift in Sources */,
+				BEAC76A523AB3EF3008D42EB /* CocoaHeroesTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEAC76B023AB3EF3008D42EB /* PodPodUITests.swift in Sources */,
+				BEAC76B023AB3EF3008D42EB /* CocoaHeroesUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +290,12 @@
 /* Begin PBXTargetDependency section */
 		BEAC76A223AB3EF3008D42EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BEAC768623AB3EF1008D42EB /* PodPod */;
+			target = BEAC768623AB3EF1008D42EB /* CocoaHeroes */;
 			targetProxy = BEAC76A123AB3EF3008D42EB /* PBXContainerItemProxy */;
 		};
 		BEAC76AD23AB3EF3008D42EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BEAC768623AB3EF1008D42EB /* PodPod */;
+			target = BEAC768623AB3EF1008D42EB /* CocoaHeroes */;
 			targetProxy = BEAC76AC23AB3EF3008D42EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -440,13 +440,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PA5AF5ZL4Q;
-				INFOPLIST_FILE = PodPod/Info.plist;
+				INFOPLIST_FILE = CocoaHeroes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devminchan.PodPod;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devminchan.CocoaHeroes;
+				PRODUCT_NAME = CocoaHeroes;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,13 +459,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PA5AF5ZL4Q;
-				INFOPLIST_FILE = PodPod/Info.plist;
+				INFOPLIST_FILE = CocoaHeroes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devminchan.PodPod;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devminchan.CocoaHeroes;
+				PRODUCT_NAME = CocoaHeroes;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -477,18 +479,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PA5AF5ZL4Q;
-				INFOPLIST_FILE = PodPodTests/Info.plist;
+				INFOPLIST_FILE = CocoaHeroesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devminchan.PodPodTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devminchan.CocoaHeroesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodPod.app/PodPod";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CocoaHeroes.app/CocoaHeroes";
 			};
 			name = Debug;
 		};
@@ -499,18 +501,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PA5AF5ZL4Q;
-				INFOPLIST_FILE = PodPodTests/Info.plist;
+				INFOPLIST_FILE = CocoaHeroesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devminchan.PodPodTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devminchan.CocoaHeroesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodPod.app/PodPod";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CocoaHeroes.app/CocoaHeroes";
 			};
 			name = Release;
 		};
@@ -557,7 +559,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEAC768223AB3EF1008D42EB /* Build configuration list for PBXProject "PodPod" */ = {
+		BEAC768223AB3EF1008D42EB /* Build configuration list for PBXProject "CocoaHeroes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAC76B223AB3EF3008D42EB /* Debug */,
@@ -566,7 +568,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEAC76B423AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "PodPod" */ = {
+		BEAC76B423AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "CocoaHeroes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAC76B523AB3EF3008D42EB /* Debug */,
@@ -575,7 +577,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEAC76B723AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "PodPodTests" */ = {
+		BEAC76B723AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "CocoaHeroesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAC76B823AB3EF3008D42EB /* Debug */,
@@ -584,7 +586,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEAC76BA23AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "PodPodUITests" */ = {
+		BEAC76BA23AB3EF3008D42EB /* Build configuration list for PBXNativeTarget "CocoaHeroesUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAC76BB23AB3EF3008D42EB /* Debug */,
@@ -596,13 +598,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BEAC769323AB3EF1008D42EB /* PodPod.xcdatamodeld */ = {
+		BEAC769323AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				BEAC769423AB3EF1008D42EB /* PodPod.xcdatamodel */,
 			);
 			currentVersion = BEAC769423AB3EF1008D42EB /* PodPod.xcdatamodel */;
-			path = PodPod.xcdatamodeld;
+			path = CocoaHeroes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
