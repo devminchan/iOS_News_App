@@ -11,8 +11,9 @@ import Alamofire
 import AlamofireObjectMapper
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var cocoaLabel: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
