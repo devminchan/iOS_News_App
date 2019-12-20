@@ -6,7 +6,8 @@ target 'CocoaHeroes' do
   use_frameworks!
 
   # Pods for CocoaHeroes
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'Kingfisher'
 
   target 'CocoaHeroesTests' do

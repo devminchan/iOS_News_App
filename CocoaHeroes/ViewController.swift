@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
 
 class ViewController: UIViewController {
 
@@ -23,17 +24,20 @@ class ViewController: UIViewController {
             "Accept": "application/json"
         ]
         
-        AF.request("https://dapi.kakao.com/v2/search/image", method: .get, parameters: queryDict, encoder: URLEncodedFormParameterEncoder.default, headers: HTTPHeaders.init(headers))
-            .responseString { res in
-                switch res.result {
+        Alamofire
+            .request("https://dapi.kakao.com/v2/search/image",
+                     method: .get,
+                     parameters: queryDict,
+                     headers: headers).responseObject
+            { (res: DataResponse<APIImageResponse>) in
+                switch (res.result) {
                 case .success(let result):
-                    print(result)
-                case .failure(let error):
-                    print(error)
-            }
+                    result.documents.forEach { imageInfo in
+                        print(imageInfo.collection ?? "")
+                    }
+                case .failure(let err):
+                    debugPrint(err.localizedDescription)
+                }
         }
-        
     }
-
-
 }
