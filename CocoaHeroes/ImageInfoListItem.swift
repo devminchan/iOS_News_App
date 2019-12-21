@@ -9,7 +9,7 @@
 import UIKit
 
 class ImageInfoListItem: UITableViewCell {
-    @IBOutlet weak var thumbNailView: UIImageView!
+    @IBOutlet weak var thumbNailImageView: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelDescription: UILabel!
 }

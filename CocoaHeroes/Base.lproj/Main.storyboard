@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ImageInfoListItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="fXt-BU-H26" customClass="ImageInfoListItem" customModule="CocoaHeroes" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ImageInfoListItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageInfoListItem" rowHeight="69" id="fXt-BU-H26" customClass="ImageInfoListItem" customModule="CocoaHeroes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fXt-BU-H26" id="N1a-jN-v1k">
@@ -60,9 +60,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageView" destination="hUr-a0-kcB" id="E0g-bx-MxR"/>
                                             <outlet property="labelDescription" destination="Gv3-tG-Jmv" id="i4A-2w-Bvj"/>
                                             <outlet property="labelTitle" destination="jrs-3w-pSE" id="Cha-DW-Nj8"/>
+                                            <outlet property="thumbNailImageView" destination="hUr-a0-kcB" id="SnP-sI-rWD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

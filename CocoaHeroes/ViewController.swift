@@ -9,11 +9,13 @@
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
+import Kingfisher
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var imageInfoList: [ImageInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,9 @@ class ViewController: UIViewController {
             "Accept": "application/json"
         ]
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         Alamofire
             .request("https://dapi.kakao.com/v2/search/image",
                      method: .get,
@@ -33,12 +38,34 @@ class ViewController: UIViewController {
             { (res: DataResponse<APIImageResponse>) in
                 switch (res.result) {
                 case .success(let result):
-                    result.documents.forEach { imageInfo in
-                        print(imageInfo.collection ?? "")
-                    }
+                    self.imageInfoList = result.documents
+                    self.tableView.reloadData()
                 case .failure(let err):
                     debugPrint(err.localizedDescription)
                 }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return imageInfoList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageInfoListItem", for: indexPath)
+        let nowIndex = indexPath.row
+        
+        guard let listItemCell = cell as? ImageInfoListItem else { return cell }
+        
+        listItemCell.labelTitle.text = imageInfoList[nowIndex].displaySitename
+        listItemCell.labelDescription.text = imageInfoList[nowIndex].docUrl
+        
+        if let urlString = imageInfoList[nowIndex].thumbnailUrl?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
+            if let url = URL(string: urlString) {
+                print(url)
+                listItemCell.thumbNailImageView.kf.setImage(with: url)
+            }
+        }
+        
+        return listItemCell
     }
 }
