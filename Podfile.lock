@@ -7,11 +7,15 @@ PODS:
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
   - ObjectMapper (3.5.1)
+  - ReactorKit (2.0.1):
+    - RxSwift (~> 5.0)
+  - RxSwift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (~> 5.2)
   - Kingfisher
+  - ReactorKit
 
 SPEC REPOS:
   trunk:
@@ -19,13 +23,17 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - Kingfisher
     - ObjectMapper
+    - ReactorKit
+    - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: ee453411bdbfd44b6c10c02a29c4c20f55efcdd3
+PODFILE CHECKSUM: 55a607fec744b93d17a0dc0a58635c81990bf5ee
 
 COCOAPODS: 1.8.4
