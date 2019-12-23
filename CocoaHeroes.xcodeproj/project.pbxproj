@@ -10,6 +10,7 @@
 		2E70C94791DD4F7E28B62C0D /* Pods_CocoaHeroes_CocoaHeroesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F986AC7C18C30F2F61B09294 /* Pods_CocoaHeroes_CocoaHeroesUITests.framework */; };
 		7CC4BA60F9DB05EC92C41FB0 /* Pods_CocoaHeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8428F74A80EB15DAFD86B9BC /* Pods_CocoaHeroesTests.framework */; };
 		AAB05BF91961F9392B291AD2 /* Pods_CocoaHeroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F7476252772D28E7E6B05A /* Pods_CocoaHeroes.framework */; };
+		BE1A741823B0A5DE0076A4BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A741723B0A5DE0076A4BD /* DetailViewController.swift */; };
 		BEAC768B23AB3EF1008D42EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768A23AB3EF1008D42EB /* AppDelegate.swift */; };
 		BEAC768D23AB3EF1008D42EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768C23AB3EF1008D42EB /* SceneDelegate.swift */; };
 		BEAC768F23AB3EF1008D42EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768E23AB3EF1008D42EB /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		9A27467A8C992828AB6979D3 /* Pods-CocoaHeroes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaHeroes.debug.xcconfig"; path = "Target Support Files/Pods-CocoaHeroes/Pods-CocoaHeroes.debug.xcconfig"; sourceTree = "<group>"; };
 		A76ACBC66A15626835029801 /* Pods-CocoaHeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaHeroesTests.release.xcconfig"; path = "Target Support Files/Pods-CocoaHeroesTests/Pods-CocoaHeroesTests.release.xcconfig"; sourceTree = "<group>"; };
 		A84C85397620AC19B73EC588 /* Pods-CocoaHeroesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaHeroesTests.debug.xcconfig"; path = "Target Support Files/Pods-CocoaHeroesTests/Pods-CocoaHeroesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE1A741723B0A5DE0076A4BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BEAC768723AB3EF1008D42EB /* CocoaHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAC768A23AB3EF1008D42EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEAC768C23AB3EF1008D42EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				BEAC769323AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld */,
 				BEBA34B223AC579E0004D32E /* ImageInfo.swift */,
 				BEBA34C023AC91D00004D32E /* ImageInfoListItem.swift */,
+				BE1A741723B0A5DE0076A4BD /* DetailViewController.swift */,
 			);
 			path = CocoaHeroes;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				BEBA34C123AC91D00004D32E /* ImageInfoListItem.swift in Sources */,
 				BEAC768D23AB3EF1008D42EB /* SceneDelegate.swift in Sources */,
 				BEBA34BF23AC6D440004D32E /* APIImageResponse.swift in Sources */,
+				BE1A741823B0A5DE0076A4BD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

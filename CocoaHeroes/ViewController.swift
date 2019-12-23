@@ -46,6 +46,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewController" {
+            if let dest = segue.destination as? DetailViewController {
+                guard let selectedIndex = tableView.indexPathForSelectedRow?.row else { return }
+                
+                dest.detailTitle = imageInfoList[selectedIndex].displaySitename
+                dest.desc = imageInfoList[selectedIndex].docUrl
+                dest.imageUrl = imageInfoList[selectedIndex].imageUrl
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imageInfoList.count
     }
@@ -61,7 +73,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if let urlString = imageInfoList[nowIndex].thumbnailUrl?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
             if let url = URL(string: urlString) {
-                print(url)
                 listItemCell.thumbNailImageView.kf.setImage(with: url)
             }
         }
