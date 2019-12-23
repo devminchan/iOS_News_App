@@ -71,6 +71,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         listItemCell.labelTitle.text = imageInfoList[nowIndex].displaySitename
         listItemCell.labelDescription.text = imageInfoList[nowIndex].docUrl
         
+        listItemCell.thumbNailImageView.layer.masksToBounds = true
+        listItemCell.thumbNailImageView.layer.cornerRadius = 8.0
+        
         if let urlString = imageInfoList[nowIndex].thumbnailUrl?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
             if let url = URL(string: urlString) {
                 listItemCell.thumbNailImageView.kf.setImage(with: url)
