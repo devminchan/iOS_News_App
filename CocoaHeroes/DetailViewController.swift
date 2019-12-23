@@ -27,7 +27,6 @@ class DetailViewController: UIViewController {
         guard let urlString = imageUrl?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else { return }
         guard let url = URL(string: urlString) else { return }
         
-        print(url)
         detailImageView.kf.setImage(with: url)
     }
 }
