@@ -7,11 +7,22 @@ PODS:
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
   - ObjectMapper (3.5.1)
+  - ReactorKit (2.0.1):
+    - RxSwift (~> 5.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (~> 5.2)
   - Kingfisher
+  - ReactorKit
+  - RxCocoa
+  - RxSwift
 
 SPEC REPOS:
   trunk:
@@ -19,13 +30,21 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - Kingfisher
     - ObjectMapper
+    - ReactorKit
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: ee453411bdbfd44b6c10c02a29c4c20f55efcdd3
+PODFILE CHECKSUM: 95f9b3c2fc1ef7f2ef921eca7c4fc625081ae75a
 
 COCOAPODS: 1.8.4

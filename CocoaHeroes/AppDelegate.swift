@@ -11,11 +11,19 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let mainController = storyBoard.instantiateViewController(withIdentifier: "MainController") as? MainController else { return true }
+        mainController.reactor = MainReactor()
+        
+        window?.rootViewController = UINavigationController(rootViewController: mainController)
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

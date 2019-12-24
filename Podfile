@@ -9,6 +9,9 @@ target 'CocoaHeroes' do
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'Kingfisher'
+  pod 'ReactorKit'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'CocoaHeroesTests' do
     inherit! :search_paths
