@@ -10,40 +10,25 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 import Kingfisher
+import RxSwift
+import RxCocoa
+import ReactorKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardView {
     
     @IBOutlet weak var tableView: UITableView!
     
     private var imageInfoList: [ImageInfo] = []
     
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let queryDict = ["query": "설현"]
-        let headers = [
-            "Authorization": "KakaoAK d3994f8190b66a9d3e493928bd27bd16",
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        ]
         
         tableView.dataSource = self
         tableView.delegate = self
         
-        Alamofire
-            .request("https://dapi.kakao.com/v2/search/image",
-                     method: .get,
-                     parameters: queryDict,
-                     headers: headers).responseObject
-            { (res: DataResponse<APIImageResponse>) in
-                switch (res.result) {
-                case .success(let result):
-                    self.imageInfoList = result.documents
-                    self.tableView.reloadData()
-                case .failure(let err):
-                    debugPrint(err.localizedDescription)
-                }
-        }
+        reactor?.action.onNext(.loadSearchResult)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,4 +67,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return listItemCell
     }
+    
+    func bind(reactor: MainReactor) {
+        reactor.state.map { $0.imageInfoList }
+            .subscribe {
+                guard let items = $0.element else { return }
+                self.imageInfoList = items
+                self.tableView.reloadData()
+            }
+            .disposed(by: disposeBag)
+    }
 }
+
+

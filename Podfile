@@ -10,6 +10,8 @@ target 'CocoaHeroes' do
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'Kingfisher'
   pod 'ReactorKit'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'CocoaHeroesTests' do
     inherit! :search_paths

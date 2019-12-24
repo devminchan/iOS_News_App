@@ -9,6 +9,11 @@ PODS:
   - ObjectMapper (3.5.1)
   - ReactorKit (2.0.1):
     - RxSwift (~> 5.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
   - RxSwift (5.0.1)
 
 DEPENDENCIES:
@@ -16,6 +21,8 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 5.2)
   - Kingfisher
   - ReactorKit
+  - RxCocoa
+  - RxSwift
 
 SPEC REPOS:
   trunk:
@@ -24,6 +31,8 @@ SPEC REPOS:
     - Kingfisher
     - ObjectMapper
     - ReactorKit
+    - RxCocoa
+    - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
@@ -32,8 +41,10 @@ SPEC CHECKSUMS:
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: 55a607fec744b93d17a0dc0a58635c81990bf5ee
+PODFILE CHECKSUM: 95f9b3c2fc1ef7f2ef921eca7c4fc625081ae75a
 
 COCOAPODS: 1.8.4

@@ -11,9 +11,10 @@
 		7CC4BA60F9DB05EC92C41FB0 /* Pods_CocoaHeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8428F74A80EB15DAFD86B9BC /* Pods_CocoaHeroesTests.framework */; };
 		AAB05BF91961F9392B291AD2 /* Pods_CocoaHeroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F7476252772D28E7E6B05A /* Pods_CocoaHeroes.framework */; };
 		BE1A741823B0A5DE0076A4BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A741723B0A5DE0076A4BD /* DetailViewController.swift */; };
+		BE1A741A23B0F6670076A4BD /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A741923B0F6670076A4BD /* MainReactor.swift */; };
 		BEAC768B23AB3EF1008D42EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768A23AB3EF1008D42EB /* AppDelegate.swift */; };
 		BEAC768D23AB3EF1008D42EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768C23AB3EF1008D42EB /* SceneDelegate.swift */; };
-		BEAC768F23AB3EF1008D42EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768E23AB3EF1008D42EB /* ViewController.swift */; };
+		BEAC768F23AB3EF1008D42EB /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC768E23AB3EF1008D42EB /* MainController.swift */; };
 		BEAC769223AB3EF1008D42EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAC769023AB3EF1008D42EB /* Main.storyboard */; };
 		BEAC769523AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEAC769323AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld */; };
 		BEAC769723AB3EF3008D42EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAC769623AB3EF3008D42EB /* Assets.xcassets */; };
@@ -53,10 +54,11 @@
 		A76ACBC66A15626835029801 /* Pods-CocoaHeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaHeroesTests.release.xcconfig"; path = "Target Support Files/Pods-CocoaHeroesTests/Pods-CocoaHeroesTests.release.xcconfig"; sourceTree = "<group>"; };
 		A84C85397620AC19B73EC588 /* Pods-CocoaHeroesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaHeroesTests.debug.xcconfig"; path = "Target Support Files/Pods-CocoaHeroesTests/Pods-CocoaHeroesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE1A741723B0A5DE0076A4BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BE1A741923B0F6670076A4BD /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
 		BEAC768723AB3EF1008D42EB /* CocoaHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAC768A23AB3EF1008D42EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEAC768C23AB3EF1008D42EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEAC768E23AB3EF1008D42EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEAC768E23AB3EF1008D42EB /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		BEAC769123AB3EF1008D42EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEAC769423AB3EF1008D42EB /* PodPod.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodPod.xcdatamodel; sourceTree = "<group>"; };
 		BEAC769623AB3EF3008D42EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,7 +143,7 @@
 				BEBA34BE23AC6D440004D32E /* APIImageResponse.swift */,
 				BEAC768A23AB3EF1008D42EB /* AppDelegate.swift */,
 				BEAC768C23AB3EF1008D42EB /* SceneDelegate.swift */,
-				BEAC768E23AB3EF1008D42EB /* ViewController.swift */,
+				BEAC768E23AB3EF1008D42EB /* MainController.swift */,
 				BEAC769023AB3EF1008D42EB /* Main.storyboard */,
 				BEAC769623AB3EF3008D42EB /* Assets.xcassets */,
 				BEAC769823AB3EF3008D42EB /* LaunchScreen.storyboard */,
@@ -150,6 +152,7 @@
 				BEBA34B223AC579E0004D32E /* ImageInfo.swift */,
 				BEBA34C023AC91D00004D32E /* ImageInfoListItem.swift */,
 				BE1A741723B0A5DE0076A4BD /* DetailViewController.swift */,
+				BE1A741923B0F6670076A4BD /* MainReactor.swift */,
 			);
 			path = CocoaHeroes;
 			sourceTree = "<group>";
@@ -424,10 +427,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEAC768F23AB3EF1008D42EB /* ViewController.swift in Sources */,
+				BEAC768F23AB3EF1008D42EB /* MainController.swift in Sources */,
 				BEBA34B323AC579E0004D32E /* ImageInfo.swift in Sources */,
 				BEAC769523AB3EF1008D42EB /* CocoaHeroes.xcdatamodeld in Sources */,
 				BEAC768B23AB3EF1008D42EB /* AppDelegate.swift in Sources */,
+				BE1A741A23B0F6670076A4BD /* MainReactor.swift in Sources */,
 				BEBA34C123AC91D00004D32E /* ImageInfoListItem.swift in Sources */,
 				BEAC768D23AB3EF1008D42EB /* SceneDelegate.swift in Sources */,
 				BEBA34BF23AC6D440004D32E /* APIImageResponse.swift in Sources */,
