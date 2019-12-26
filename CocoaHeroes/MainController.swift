@@ -14,9 +14,10 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 
-class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, StoryboardView {
+class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, StoryboardView {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     private var imageInfoList: [ImageInfo] = []
     
@@ -69,13 +70,20 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func bind(reactor: MainReactor) {
+        searchBar.rx.searchButtonClicked.map {
+            let queryText = self.searchBar.text
+            return MainReactor.Action.onSearch(queryText)
+        }
+        .bind(to: reactor.action)
+        .disposed(by: disposeBag)
+        
         reactor.state.map { $0.imageInfoList }
             .subscribe {
                 guard let items = $0.element else { return }
                 self.imageInfoList = items
                 self.tableView.reloadData()
-            }
-            .disposed(by: disposeBag)
+        }
+        .disposed(by: disposeBag)
     }
 }
 
