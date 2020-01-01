@@ -29,7 +29,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
-        reactor?.action.onNext(.loadSearchResult)
+        reactor?.action.onNext(.loadDefaultList)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

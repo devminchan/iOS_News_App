@@ -18,7 +18,7 @@ class MainReactor: Reactor {
     }
     
     enum Action {
-        case loadSearchResult
+        case loadDefaultList
         case onSearch(String?)
         case goToDetail(Int)
     }
@@ -53,7 +53,7 @@ class MainReactor: Reactor {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .loadSearchResult:
+        case .loadDefaultList:
             return getImageInfoList(query: "설현")
                 .map(Mutation.setImageInfoList)
                 .catchError { error -> Observable<Mutation> in .just(.onError(error)) }
