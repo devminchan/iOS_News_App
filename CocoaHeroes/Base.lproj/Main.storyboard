@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Controller-->
+        <!--News List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainController" id="BYZ-38-t0r" customClass="MainController" customModule="CocoaHeroes" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gTZ-zG-76p"/>
+                    <navigationItem key="navigationItem" title="News List" id="gTZ-zG-76p"/>
                     <connections>
                         <outlet property="searchBar" destination="3V0-iY-RbN" id="sKS-Mc-YkV"/>
                         <outlet property="tableView" destination="jxO-nN-g2s" id="tBd-nh-a9e"/>
@@ -172,7 +172,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gna-bn-h3Y"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7HZ-um-xDa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qup-6K-ffH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

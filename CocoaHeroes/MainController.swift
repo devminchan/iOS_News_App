@@ -26,10 +26,15 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavBar()
         tableView.dataSource = self
         tableView.delegate = self
         
         reactor?.action.onNext(.loadDefaultList)
+    }
+    
+    private func setNavBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

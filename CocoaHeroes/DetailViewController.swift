@@ -21,6 +21,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = detailTitle
+        
         detailTitleLabel.text = detailTitle
         detailDescriptionLabel.text = desc
         
