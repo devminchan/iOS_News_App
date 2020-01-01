@@ -13,31 +13,61 @@ import ObjectMapper
 
 class MainReactor: Reactor {
     
+    enum MainError: Error {
+        case emptyQuery
+    }
+    
     enum Action {
-        case loadSearchResult
+        case loadDefaultList
+        case onSearch(String?)
         case goToDetail(Int)
     }
     
     enum Mutation {
-        case searchImageInfoList([ImageInfo])
+        case setImageInfoList([ImageInfo])
         case detail(Int)
+        case onError(Error)
+    }
+    
+    struct RevisionedError: Equatable {
+        fileprivate let revision: UInt
+        let error: Error
+        
+        init(revision: UInt, error: Error) {
+            self.revision = revision
+            self.error = error
+        }
+        
+        static func == (lhs: MainReactor.RevisionedError, rhs: MainReactor.RevisionedError) -> Bool {
+            return lhs.revision == rhs.revision
+        }
     }
     
     struct State {
         var imageInfoList: [ImageInfo] = []
         var detailIndex: Int = 0
+        var error: RevisionedError?
     }
     
     var initialState = State()
     
-    func mutate(action: MainReactor.Action) -> Observable<MainReactor.Mutation> {
+    func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .loadSearchResult:
-            return getImageInfoList(query: "설현").flatMap { list -> Observable<MainReactor.Mutation> in
-                return Observable.just(.searchImageInfoList(list))
+        case .loadDefaultList:
+            return getImageInfoList(query: "설현")
+                .map(Mutation.setImageInfoList)
+                .catchError { error -> Observable<Mutation> in .just(.onError(error)) }
+        case .onSearch(let queryText):
+            return Observable.just(queryText).map { query in
+                guard let result = query else { throw MainError.emptyQuery }
+                if result.isEmpty { throw MainError.emptyQuery }
+                return result
             }
+            .flatMap { query -> Observable<[ImageInfo]> in self.getImageInfoList(query: query) }
+            .map(Mutation.setImageInfoList)
+            .catchError { error -> Observable<Mutation> in .just(.onError(error)) }
         case .goToDetail(let idx):
-            return Observable.just(.detail(idx))
+            return .just(.detail(idx))
         }
     }
     
@@ -45,17 +75,23 @@ class MainReactor: Reactor {
         var newState = state
         
         switch mutation {
-        case .searchImageInfoList(let imageInfoList):
+        case .setImageInfoList(let imageInfoList):
             newState.imageInfoList = imageInfoList
         case .detail(let idx):
             newState.detailIndex = idx
+        case .onError(let error):
+            if let prevError = state.error {
+                newState.error = RevisionedError(revision: prevError.revision + 1, error: error)
+            } else {
+                newState.error = RevisionedError(revision: 0, error: error)
+            }
         }
         
         return newState
     }
     
     private func getImageInfoList(query: String) -> Observable<[ImageInfo]> {
-        let queryDict = ["query": "설현"]
+        let queryDict = ["query": query]
         let headers = [
             "Authorization": "KakaoAK d3994f8190b66a9d3e493928bd27bd16",
             "Content-Type": "application/json",
@@ -64,16 +100,15 @@ class MainReactor: Reactor {
         
         return Observable.create { observer -> Disposable in
             let dataRequest = Alamofire.request("https://dapi.kakao.com/v2/search/image",
-                         method: .get,
-                         parameters: queryDict,
-                         headers: headers).responseObject
+                                                method: .get,
+                                                parameters: queryDict,
+                                                headers: headers).responseObject
                 { (res: DataResponse<APIImageResponse>) in
                     switch (res.result) {
                     case .success(let result):
                         observer.onNext(result.documents)
                         observer.onCompleted()
                     case .failure(let err):
-                        debugPrint(err.localizedDescription)
                         observer.onError(err)
                         observer.onCompleted()
                     }
