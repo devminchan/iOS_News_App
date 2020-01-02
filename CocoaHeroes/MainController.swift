@@ -40,8 +40,7 @@ class MainController: UIViewController,
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController?.dimsBackgroundDuringPresentation = false
-        
-        // ??? DetailViewController 접속시 back button 사라짐 현상 발생
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: nil, action: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
