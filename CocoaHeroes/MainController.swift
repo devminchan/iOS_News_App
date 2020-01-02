@@ -74,6 +74,8 @@ class MainController: UIViewController, StoryboardView {
         
         tableView.rx.modelSelected(ImageInfo.self)
             .bind { imageInfo in
+                self.searchController.dismiss(animated: true, completion: nil)
+                
                 let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
                 detailViewController.imageUrl = imageInfo.imageUrl
                 detailViewController.detailTitle = imageInfo.displaySitename
