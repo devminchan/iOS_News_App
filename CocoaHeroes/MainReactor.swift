@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 import Alamofire
-import ObjectMapper
+import AlamofireObjectMapper
 
 class MainReactor: Reactor {
     

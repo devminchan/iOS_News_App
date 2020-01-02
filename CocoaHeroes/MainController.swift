@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireObjectMapper
 import Kingfisher
 import RxSwift
 import RxCocoa
@@ -61,6 +59,15 @@ class MainController: UIViewController, StoryboardView {
                 
                 if let imageUrl = element.imageUrl {
                     cell.thumbNailImageView.kf.setImage(with: URL(string: imageUrl))
+                }
+        }
+        .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.error }
+            .distinctUntilChanged()
+            .bind { error in
+                if let err = error {
+                    print(err)
                 }
         }
         .disposed(by: disposeBag)
