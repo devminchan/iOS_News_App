@@ -102,6 +102,33 @@
             </objects>
             <point key="canvasLocation" x="277.60000000000002" y="99.400299850074973"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="KLq-YX-ruD">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RZC-Pe-JgF" customClass="MenuViewController" customModule="CocoaHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yBf-xF-KuW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lX-JO-sVE">
+                                <rect key="frame" x="166.5" y="16" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9lX-JO-sVE" firstAttribute="centerX" secondItem="yBf-xF-KuW" secondAttribute="centerX" id="Nby-a6-YB4"/>
+                            <constraint firstItem="9lX-JO-sVE" firstAttribute="top" secondItem="CU2-Ct-Vt5" secondAttribute="top" constant="16" id="hrf-j1-Ael"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CU2-Ct-Vt5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIk-gJ-Mxu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="770"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="gdZ-zj-rNH">
             <objects>
@@ -160,16 +187,19 @@
         <!--Navigation Controller-->
         <scene sceneID="Otc-DW-fpl">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qup-6K-ffH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="bVb-si-Ef9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1ml-39-4nV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7HZ-um-xDa"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qup-6K-ffH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-534" y="101"/>
         </scene>

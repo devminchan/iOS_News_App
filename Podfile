@@ -12,6 +12,7 @@ target 'CocoaHeroes' do
   pod 'ReactorKit'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SideMenu'
 
   target 'CocoaHeroesTests' do
     inherit! :search_paths

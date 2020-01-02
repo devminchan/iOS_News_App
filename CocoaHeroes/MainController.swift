@@ -13,13 +13,15 @@ import Kingfisher
 import RxSwift
 import RxCocoa
 import ReactorKit
+import SideMenu
 
 class MainController: UIViewController,
     UITableViewDataSource,
-    UITableViewDelegate, StoryboardView {
+UITableViewDelegate, StoryboardView {
     
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
+    let menuButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: nil, action: nil)
     
     private var imageInfoList: [ImageInfo] = []
     
@@ -29,6 +31,8 @@ class MainController: UIViewController,
         super.viewDidLoad()
         
         setNavBar()
+        setLocalUIEventListeners()
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -40,7 +44,7 @@ class MainController: UIViewController,
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController?.dimsBackgroundDuringPresentation = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = menuButton
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -96,6 +100,35 @@ class MainController: UIViewController,
         }
         .disposed(by: disposeBag)
     }
+    
+    func setLocalUIEventListeners() {
+        menuButton.rx.tap.bind { _ in
+            print("12312312312312312312")
+            self.present(self.sideMenu, animated: true, completion: nil)
+        }.disposed(by: disposeBag)
+    }
 }
 
-
+extension UIViewController {
+    var sideMenu: SideMenuNavigationController {
+        let menuViewController = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        
+        let sideMenu = SideMenuNavigationController(rootViewController: menuViewController)
+        sideMenu.leftSide = true
+        sideMenu.settings = getSideMenuSetting()
+        
+        return sideMenu
+    }
+    
+    private func getSideMenuSetting() -> SideMenuSettings {
+        let displayOptions: SideMenuPresentationStyle = .menuSlideIn
+        displayOptions.backgroundColor = .black
+        displayOptions.presentingEndAlpha = CGFloat(0.5)
+        
+        var setting = SideMenuSettings()
+        setting.presentationStyle = displayOptions
+        setting.statusBarEndAlpha = 0
+        
+        return setting
+    }
+}
