@@ -15,26 +15,20 @@ import RxCocoa
 import ReactorKit
 import SideMenu
 
-class MainController: UIViewController,
-    UITableViewDataSource,
-UITableViewDelegate, StoryboardView {
+class MainController: UIViewController, StoryboardView {
     
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
     let menuButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: nil, action: nil)
     
-    private var imageInfoList: [ImageInfo] = []
-    
     var disposeBag = DisposeBag()
+    var itemCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavBar()
         setLocalUIEventListeners()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
         
         reactor?.action.onNext(.loadDefaultList)
     }
@@ -47,43 +41,6 @@ UITableViewDelegate, StoryboardView {
         navigationItem.leftBarButtonItem = menuButton
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailViewController" {
-            if let dest = segue.destination as? DetailViewController {
-                guard let selectedIndex = tableView.indexPathForSelectedRow?.row else { return }
-                
-                dest.detailTitle = imageInfoList[selectedIndex].displaySitename
-                dest.desc = imageInfoList[selectedIndex].docUrl
-                dest.imageUrl = imageInfoList[selectedIndex].imageUrl
-            }
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imageInfoList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageInfoListItem", for: indexPath)
-        let nowIndex = indexPath.row
-        
-        guard let listItemCell = cell as? ImageInfoListItem else { return cell }
-        
-        listItemCell.labelTitle.text = imageInfoList[nowIndex].displaySitename
-        listItemCell.labelDescription.text = imageInfoList[nowIndex].docUrl
-        
-        listItemCell.thumbNailImageView.layer.masksToBounds = true
-        listItemCell.thumbNailImageView.layer.cornerRadius = 8.0
-        
-        if let urlString = imageInfoList[nowIndex].thumbnailUrl?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) {
-            if let url = URL(string: urlString) {
-                listItemCell.thumbNailImageView.kf.setImage(with: url)
-            }
-        }
-        
-        return listItemCell
-    }
-    
     func bind(reactor: MainReactor) {
         searchController.searchBar.rx.searchButtonClicked.map {
             let queryText = self.searchController.searchBar.text
@@ -93,10 +50,29 @@ UITableViewDelegate, StoryboardView {
         .disposed(by: disposeBag)
         
         reactor.state.map { $0.imageInfoList }
-            .subscribe {
-                guard let items = $0.element else { return }
-                self.imageInfoList = items
-                self.tableView.reloadData()
+            .bind(to: tableView.rx.items(cellIdentifier: "ImageInfoListItem")) {
+                (index: Int, element: ImageInfo, cell: ImageInfoListItem) in
+                cell.labelTitle.text = element.displaySitename
+                cell.labelDescription.text = element.docUrl
+                
+                cell.thumbNailImageView.contentMode = .scaleAspectFill
+                cell.thumbNailImageView.layer.cornerRadius = 8.0
+                cell.thumbNailImageView.layer.masksToBounds = true
+                
+                if let imageUrl = element.imageUrl {
+                    cell.thumbNailImageView.kf.setImage(with: URL(string: imageUrl))
+                }
+        }
+        .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(ImageInfo.self)
+            .bind { imageInfo in
+                let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+                detailViewController.imageUrl = imageInfo.imageUrl
+                detailViewController.detailTitle = imageInfo.displaySitename
+                detailViewController.desc = imageInfo.docUrl
+                
+                self.navigationController?.pushViewController(detailViewController, animated: true)
         }
         .disposed(by: disposeBag)
     }
