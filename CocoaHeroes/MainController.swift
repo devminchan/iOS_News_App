@@ -102,8 +102,7 @@ UITableViewDelegate, StoryboardView {
     }
     
     func setLocalUIEventListeners() {
-        menuButton.rx.tap.bind { _ in
-            print("12312312312312312312")
+        menuButton.rx.tap.throttle(.milliseconds(300), scheduler: MainScheduler.instance).bind { _ in
             self.present(self.sideMenu, animated: true, completion: nil)
         }.disposed(by: disposeBag)
     }
