@@ -14,10 +14,12 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 
-class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, StoryboardView {
+class MainController: UIViewController,
+    UITableViewDataSource,
+    UITableViewDelegate, StoryboardView {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    let searchController = UISearchController(searchResultsController: nil)
     
     private var imageInfoList: [ImageInfo] = []
     
@@ -35,6 +37,11 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     private func setNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController?.dimsBackgroundDuringPresentation = false
+        
+        // ??? DetailViewController 접속시 back button 사라짐 현상 발생
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,8 +82,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func bind(reactor: MainReactor) {
-        searchBar.rx.searchButtonClicked.map {
-            let queryText = self.searchBar.text
+        searchController.searchBar.rx.searchButtonClicked.map {
+            let queryText = self.searchController.searchBar.text
             return MainReactor.Action.onSearch(queryText)
         }
         .bind(to: reactor.action)
